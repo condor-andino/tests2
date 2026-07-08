@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+/* Paleta sobria: papel y tinta, con un acento de sangre seca.
+   Cormorant Garamond para títulos; IBM Plex Mono para etiquetas y datos. */
+@theme {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-paper: #f5f1e8;
+  --color-paper-2: #ece6d8;
+  --color-ink: #191613;
+  --color-ink-2: #4d463d;
+  --color-muted: #7a7163;
+  --color-line: #d8d0c0;
+  --color-accent: #7d2b20;
+  --color-accent-2: #a4432f;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #16130f;
+    --color-paper-2: #1f1b15;
+    --color-ink: #e8e2d4;
+    --color-ink-2: #b8b0a0;
+    --color-muted: #8a8172;
+    --color-line: #3a342a;
+    --color-accent: #c25a42;
+    --color-accent-2: #d97b5e;
+  }
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-paper);
+}
